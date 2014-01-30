@@ -1,0 +1,380 @@
+/**
+ * fullPage 1.4.5
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+ @font-face { font-family: 'Century Gothic'; 
+	src: url('../font/century_gothic.eot'); 
+	src: url('../font/century_gothic.eot?#iefix') format('embedded-opentype'), 
+	     url('../font/century_gothic.svg#Century Gothic') format('svg'), 
+		 url('../font/century_gothic.woff') format('woff'), 
+		 url('../font/century_gothic.ttf') format('truetype');
+ 	font-weight: normal;
+    font-style: normal;
+  }
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#superContainer {
+    height: 100%;
+    position: relative;
+}
+.section {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	background-size:cover;
+}
+.slide {
+    float: left;
+	background-size:cover;
+}
+.slide, .slidesContainer {
+    height: 100%;
+    display: block;
+	
+}
+.slides {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.section.table, .slide.table {
+    display: table;
+    width: 100%;
+}
+.tableCell {
+    display: block;
+    vertical-align: bottom;
+    width: 100%;
+    height: 100%;
+}
+.slidesContainer {
+    float: left;
+    position: relative;
+}
+.controlArrow {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+}
+.controlArrow.prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.controlArrow.next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+}
+.scrollable {
+    overflow: scroll;
+}
+.easing {
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+}
+#fullPage-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#fullPage-nav.right {
+    right: 17px;
+}
+#fullPage-nav.left {
+    left: 17px;
+}
+.fullPage-slidesNav {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.fullPage-slidesNav.bottom {
+    bottom: 17px;
+}
+.fullPage-slidesNav.top {
+    top: 17px;
+}
+#fullPage-nav ul,
+.fullPage-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fullPage-nav li,
+.fullPage-slidesNav li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.fullPage-slidesNav li {
+    display: inline-block;
+}
+#fullPage-nav li a,
+.fullPage-slidesNav li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fullPage-nav li .active span,
+.fullPage-slidesNav .active span {
+    background: #333;
+}
+#fullPage-nav span,
+.fullPage-slidesNav span {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+.fullPage-tooltip {
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    top: -2px;
+}
+.fullPage-tooltip.right {
+    right: 20px;
+}
+.fullPage-tooltip.left {
+    left: 20px;
+}
+#footer{
+	background:#2d2d2d repeat;
+	height:160px;
+	font-family:"Century Gothic", "Century Gothic Italic";
+	position:absolute;
+	bottom:0px;
+	width:100%;
+}
+
+#cont-footer{
+	
+	height:160px;
+	width:960px;
+	margin:0 auto;
+		}
+
+#cont-footer .foo{
+	font-family:"Century Gothic", "Century Gothic Italic";
+	color:#fff;
+	font-size:14px;
+	letter-spacing:0px;
+	float:left;
+	display:inline;
+	margin-right:30px;
+	margin-top:35px;
+	margin-bottom:5px;
+	font-weight:lighter;
+	
+}
+
+#cont-footer .capo{
+	clear:left;
+	
+}
+
+#cont-footer ul{
+	list-style:none;
+	margin:0;
+}
+
+#cont-footer li{
+	float:left;
+	margin-top:20px;
+}
+
+#cont-footer a{
+	display:block;
+	/*text-indent:-9999px;*/
+	width:50px;
+	height:50px;
+	
+}
+
+.fb{
+	background:url(../img/fb-button.png) no-repeat center;
+}
+
+.tw{
+	background:url(../img/twi-button.png);
+}
+
+.li{
+	background:url(../img/in-button.png);
+}
+
+.g{
+	background:url(../img/gplus-button.png);
+}
+
+.ig{
+	background:url(../img/insta-button.png);
+}
+
+#first{
+	background: url(../img/wkbgsct-1.png) no-repeat center;
+	background-size:cover;
+	}
+.third{
+	background:url(../img/wkbgsct-3.png) no-repeat center;
+	background-size: cover;
+	position:relative;
+	background-position-y:-100px;
+	}
+
+#work1{
+	background:url(../img/work%201.png) no-repeat center;
+	background-size:cover;
+}
+#work2{
+	background:url(../img/work%202.png) no-repeat center;
+	background-size:cover;
+}
+#navi{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:0px;
+	padding-top:50px;
+}
+
+#navi ul{
+	float: left;
+	list-style: none;
+	margin: 0;
+	
+
+}
+
+#navi li{
+	font-family:"Century Gothic";
+	font-weight:lighter;
+	text-decoration:none;
+	float:left;
+	padding-right:30px;
+}
+
+#navi a{
+	text-decoration:none;
+	color:#fff;
+}
+
+
+
+.effect {
+	position:relative;
+	display:inline-block;
+	text-decoration:none;
+	padding:5px;
+	}
+
+.effect1 {
+	color:#0F659C;
+	-ms-transition: width linear 0.2s;
+	-webkit-transition: width linear 0.2s; 
+	-moz-transition: width linear 0.2s;
+	transition: width linear 0.2s;
+	}
+
+.effect1:before {
+	position:absolute;
+	bottom:-3px;
+	content:" ";
+	display:block;
+	width:0;
+	height:2px;
+	background:#FFF;
+	-ms-transition: width linear 0.2s;
+	-webkit-transition: width linear 0.2s; 
+	-moz-transition: width linear 0.2s;
+	transition: width linear 0.2s;
+	}
+.effect1:hover:before{
+	width:100%;
+	}
+#cont-sct-1{
+	
+	width:960px;
+	
+	margin:0 auto;
+	
+	}
+	#logo{
+	
+	float:left;
+	padding-left:15px;
+	padding-top:20px;
+	}
+.text-sct1{
+	padding-top:300px;
+	text-align:center;
+	font-family:"Century Gothic", "Century Gothic Italic";
+	
+	clear:left;
+	
+	
+}
+#wework{
+	text-align:center;
+	font-family:"Century Gothic", "Century Gothic Italic";
+	clear:left;
+	color:#6a615f;
+	font-size:38px;
+	font-weight:lighter;
+	letter-spacing:-1px;
+	
+	}
+#abrief{
+	text-align:center;
+	font-family:"Century Gothic", "Century Gothic Italic";
+	clear:left;
+	color:#6a615f;
+	font-weight:lighter;
+	font-size:18px;
+	}
+#text-sct3{
+	padding-top:50px;
+	text-align:center;
+	font-family:"Century Gothic", "Century Gothic Italic";
+	clear:left;
+	color: #EEEEEE;
+	font-size:32px;
+	font-weight:lighter;
+	
+	line-height:40px;
+	
+	}

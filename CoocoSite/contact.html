@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="css/uniform.css" media="screen" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.js"></script>
+    <script type="text/javascript" src="js/jquery.uniform.min.js"></script>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/gmap3.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+
+<meta name="keywords" content="cooco,studio,gela,coordinate,color,image,grafica,sicilia,roberto,collodoro,walter,migliore,giovanni,mallo,gaetano,gitana,rocky,venezia,creativa
+">
+<title>Work with us - Cooco Studio</title>
+<link href="css/contact.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="favico.png"/>
+
+</head>
+
+<body>
+
+<div id="main-container">
+<div id="sct-1">
+		<div id="cont-sct-1">
+        <div id="logo">
+      <a href="index.html" class="image-shine">  <img src="img/home-logo-eye.png" width="80" height="80"/></a>
+        
+        </div>
+        <div id="navi">
+                	<ul>
+                    	<li><a href="about.html" class="effect effect1">ABOUT</a></li>
+                        <li><a href="services.html" class="effect effect1">SERVICES</a></li>
+                        <li><a href="works.html" class="effect effect1">WORKS</a></li>
+                        <li><a href="contact.html" class="effect effect1">WORK WITH US</a></li>
+                        
+                    </ul>
+                    
+                </div>
+
+</div>
+</div>
+<div id="sct-2">
+<div id="cont-sct-2">
+<p id="text-form">It's important for us to know who you are. Tell us about yourself, your skills and show us the passion you put in your work.<br> We are looking for reliable, creative and dedicated people. Fill the form below to contact us.</p>
+<div class="TTWForm-container">
+      
+      
+     <form action="js/process_form.php" class="TTWForm" method="post" novalidate
+     style="width: 960px;">
+           
+           
+          <div id="field1-container" class="field f_25">
+               <label for="field1">
+                    First Name
+               </label>
+               <input type="text" name="firstname" id="field1" required="required" >
+          </div>
+           
+           
+          <div id="field2-container" class="field f_25">
+               <label for="field2">
+                    Last Name
+               </label>
+               <input type="text" name="lastname" id="field2" required="required">
+          </div>
+           
+           
+          <div id="field3-container" class="field f_25">
+               <label for="field3">
+                    Email Address
+               </label>
+               <input type="email" name="field3" id="field3" required="required">
+          </div>
+           
+           
+          <div id="field5-container" class="field f_25">
+               <label for="field5">
+                    Job
+               </label>
+               <select name="job" id="field5" required>
+                    <option id="field5-1" value="Designer">
+                         Designer
+                    </option>
+                    <option name="job" id="field5-2" value="Illustrator">
+                         Illustrator
+                    </option>
+                    <option name="job" id="field5-3" value="Web Developer">
+                         Web Developer
+                    </option>
+                    <option name="job" id="job-4" value="App Developer">
+                         App Developer
+                    </option>
+                    <option name="job" id="job-5" value="Video Maker">
+                         Video Maker
+                    </option>
+                    <option name="job" id="job-6" value="Linguist">
+                         Linguist
+                    </option>
+               </select>
+          </div>
+           
+           
+          <div id="field6-container" class="field f_100">
+               <label for="field6">
+                    Tell us what you want.
+               </label>
+               <textarea rows="5" cols="20" name="field6" id="field6" required></textarea>
+          </div>
+           
+           
+          <div id="form-submit" class="field f_100 clearfix submit">
+               <input type="submit" value="Submit">
+          </div>
+     </form>
+</div>
+</div>
+</div>
+<div id="invite">
+<div id="cont-invite">
+	<p class="invite"><h1>Where</h1>&nbsp;&nbsp;<h2>we are...</h2></p>
+    
+</div>
+</div>
+<div id="coo-map">
+
+	<div id="cont-sct-3"></div>
+</div>
+</div>
+
+</body>
+</html>
+<script> var map;
+var cooco = new google.maps.LatLng(37.079896, 14.212048);
+
+var stylez = [
+    {
+      featureType: "all",
+      elementType: "all",
+      stylers: [
+        { saturation: -100 } // <-- THIS
+      ]
+    }
+];
+
+var mapOptions = {
+    zoom: 17,
+	scrollwheel:false,
+	zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL
+    },
+	streetViewControl:false,
+	mapTypeControl: false,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    center: cooco,
+    mapTypeControlOptions: {
+         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+    }
+};
+
+map = new google.maps.Map(document.getElementById("coo-map"), mapOptions);
+
+var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });    
+map.mapTypes.set('tehgrayz', mapType);
+map.setMapTypeId('tehgrayz');
+var coocontent ='<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<img src="img/cont-maplogo.png" width="200"'+
+      '<div id="bodyContent">'+
+      '<p style="font-family:Century Gothic; color:#aeaeae" >Via Caviaga, 93012, Gela, Sicily<br>+39 345 5906 713<br>coocogela@gmail.com</p>'+
+      '</div>'+
+      '</div>';
+	  
+var cooinfo = new google.maps.InfoWindow({
+	content: coocontent,
+	maxwidth:200	
+	}
+);
+var iconBase='img/';
+var marker = new google.maps.Marker({
+      position: cooco,
+      map: map,
+      title: 'Cooco Studio',
+	  icon: iconBase+'maplogo.png'
+  });
+cooinfo.open(map,marker);
+</script>
+
+
